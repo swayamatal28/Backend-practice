@@ -59,7 +59,7 @@
         <% comments.forEach(comment => { %>
         <div>
           <img src="<%= comment.createdBy.profileImageURL %>" width="50px" />
-          <%= comment.createdBy.fullName %>
+          <%= comment.createdBy.name %>
           <pre><%= comment.content %></pre>
         </div>
         <% }) %>
