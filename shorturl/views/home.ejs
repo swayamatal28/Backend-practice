@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the URL Shortner Service, enjoy yo time hee!</h1>
+    <p> Your URL is: <a href="/url/<%=locals.id %>">http://localhost:8001/url/<%=locals.id %> </a></p>
+    <form method="POST" action="/url">
+        <label for="url">Enter your original url</label> <br>
+        <input type="text" id="url" placeholder="https://example.com" name="url" />
+        <button type="submit">Generate</button>
+    </form>
+</body>
+</html>
