@@ -10,8 +10,11 @@ router.post("/",async (req,res)=>{
         shortId:shortId,
         redirectedUrl:body.url,
     })
+    const entry= await URL.findOne({shortId});
+    let redirectedUrl=entry.redirectedUrl;
     return res.render("home",{
         id:shortId,
+        redirectedUrl,
     })
 })
 router.get(("/:shortId"),async (req,res)=>{
