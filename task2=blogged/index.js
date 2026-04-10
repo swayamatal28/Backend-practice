@@ -15,12 +15,28 @@ const blogRoute=require("./routes/blog");
 app.use(checkforauth("token"));
 app.use(express.static(path.resolve('./public')));
 const Blog = require("./models/blog");
+const client=require("./client");
+
 
 app.get("/home",async  (req, res) => {
     if (!req.user) {
         return res.redirect("/user/signin");  
     }
-    const blogs = await Blog.find().populate("createdBy");
+    const blog_cache=await client.get('pc');
+    let blogs;
+    if(blog_cache) {
+        console.log("⚡ CACHE HIT");
+        blogs=JSON.parse(blog_cache);
+    }
+
+    else {
+        console.log("DB HIT");
+
+        blogs = await Blog.find().populate("createdBy");
+        await client.set("pc",JSON.stringify(blogs));
+        await client.expire('pc',3);
+
+    }
     return res.render("home", {
         user: req.user,  
         blogs,

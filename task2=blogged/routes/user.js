@@ -26,6 +26,7 @@ router.post("/signup",async (req,res)=>{
 router.post("/signin",async (req,res)=>{
     //signin 
     const {email,password}=req.body;
+    console.log(req.body);
     try{
         const token=await User.match(email,password);
         return res.cookie("token",token).redirect("/home");
