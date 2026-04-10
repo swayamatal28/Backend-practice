@@ -41,7 +41,7 @@ module.exports={
                 await redisClient.hset(userId,{
                     "count":parseInt(result["count"])+1
                 })
-                next()
+                next();
             }
         }
 
