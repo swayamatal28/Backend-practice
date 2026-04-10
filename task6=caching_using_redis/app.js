@@ -4,7 +4,7 @@ const app=express();
 const PORT=3000;
 const client=require("./client");
 
-
+//redis only store strings
 app.get("/",async (req,res)=>{
     const cache=await client.get('todos');
     if(cache) return res.json(JSON.parse(cache));
