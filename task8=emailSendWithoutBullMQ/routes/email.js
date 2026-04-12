@@ -1,6 +1,6 @@
 const express=require("express");
 const router=express.Router();
-const queue=require("../queue/emailQueue")
+const queue=require("../queue/emailQueue");
 
 router.post("/",(req,res)=>{
     const {email,message}=req.body;
