@@ -10,7 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use("/email-send",emailRoute);
-
 app.get("/",(req,res)=>{
     res.render("home");
 })
