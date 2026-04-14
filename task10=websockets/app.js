@@ -8,7 +8,7 @@ const {Server}=require("socket.io");
 app.use(express.static(path.resolve("./views")));
 const io=new Server(server);//io means input output
 
-io.on('connection',(socket)=>{
+io.on('connection',(socket)=>{ // this runs everytime a new user connectes and this socket shows that user
     socket.on("chat-message",(message)=>{
         io.emit("message",message);
     })
