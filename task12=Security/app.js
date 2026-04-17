@@ -18,5 +18,7 @@ const helmet=require("helmet");
 // the script inserted by the hacker would not be intonthe html
 //hence, we can use innerhtml , if there is no user input alse do use innerText instead of that
 
+//there are other important attacks-refer notes
+
 
 app.listen(port,()=> console.log('started'));
