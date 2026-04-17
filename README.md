@@ -8,7 +8,7 @@ This repository is a collection of Medium-Advanced backend exercises and demos. 
 - `task2=blogged/` - Blog application with users, posts, comments, uploads, and Redis-based pieces.
 - `task3=shorturl/` - URL shortener built with Express, MongoDB, and short ID generation.
 - `task4=rateLimitingWithoutRedis/` - Rate limiting example using in-memory logic.
-- `task5=rateLimitingWithRedis/` - Rate limiting example backed by Redis.
+- `task5=rateLimitingWithRedis/` - Rate limiting example backed by Redis .
 - `task6=caching_using_redis/` - Redis caching demo.
 - `task7=BULLMQ/` - BullMQ producer/worker example.
 - `task8=emailSendWithoutBullMQ/` - Email sending flow without a queue.
